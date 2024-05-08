@@ -1,0 +1,121 @@
+<style>
+    body {
+         background-color: #f0f0f0;
+         font-family: Arial, sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         width: 100vw;
+         margin: 0;
+         background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+
+     }
+    a{
+     text-decoration: none;
+     color: rgb(231, 215, 65);
+    }
+     form {
+         max-width: 300px;
+         padding: 20px;
+         /* background-color: #fff; */
+         border-radius: 8px;
+         
+         /* text-align: center; */
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .branding {
+         margin-bottom: 20px;
+         font-size: 24px;
+         font-weight: bold;
+         color: #128C7E;
+         /* ChitChat brand color */
+     }
+
+     .btn-container {
+         text-align: center;
+     }
+
+     button {
+         background-color: #128C7E;
+         background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+         border: none;
+         padding: 10px 20px;
+         border-radius: 4px;
+         cursor: pointer;
+     }
+
+     button:hover {
+         background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+     }
+
+     label {
+         font-weight: bold;
+         text-align: left;
+         width: 85%;
+     }
+
+     input[type="text"],
+     input[type="password"] {
+         width: 80%;
+         padding: 10px;
+         margin-bottom: 10px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+     }
+ </style>
+
+
+<div class=" card container" id="card" style="border-radius: 30px; width: 300px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.4) !important; 
+color: aliceblue; padding: 30px; margin-top: 10px;">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3"><center>REGISTER PAGE</center> </h4>
+            
+        </div>
+    </div>
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="mb-4"><center>
+                            {{form.username}}
+                        </center>
+                        {% if form.errors.username %}
+                        <label class="text-danger">{{form.errors.username}}</label>
+                        {% endif %}
+                    </div><br>
+                        <div class="mb-4"><center>
+                            {{form.email}}
+                        </center>
+                        {% if form.errors.email %}
+                        <label class="text-danger">{{form.errors.email}}</label>
+                        {% endif %}
+                    </div><br>
+                        <div class="mb-4"><center>
+                            {{form.password1}}
+                        </center>
+                        {% if form.errors.password1 %}
+                        <label class="text-danger">{{form.errors.password1}}</label>
+                        {% endif %} </div><br>
+                        <div class="mb-4"><center>
+                            {{form.password2}}
+                        </center>
+                        {% if form.errors.password2 %}
+                        <label class="text-danger">{{form.errors.password2}}</label>
+                        {% endif %}
+                    </div><br>
+                        <center><button type="submit" class="btn btn-primary">register</button></center>
+                    </form>
+                    <p class="my-2"><center>Already User ? <a href="{% url 'login' %}">Login Now</center></a></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

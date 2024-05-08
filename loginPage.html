@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+       body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+
+        }
+       a{
+        text-decoration: none;
+        color: rgb(231, 215, 65);
+       }
+        form {
+            max-width: 300px;
+            padding: 20px;
+            /* background-color: #fff; */
+            border-radius: 8px;
+            
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .branding {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #128C7E;
+            /* ChitChat brand color */
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #128C7E;
+            background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+        }
+
+        label {
+            font-weight: bold;
+            text-align: left;
+            width: 85%;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class=" card container" id="card" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.4) !important; color: aliceblue;
+      padding: 30px; height: 350px; width: 300px; border-radius: 60px; margin-top: 50px;">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3"><center>USER LOGIN</center> </h4>
+                
+            </div>
+        </div>
+        <section class="py-4 my-5" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <form method="post" action="" >
+                            {% csrf_token %}
+                            <div class="mb-4" st><center>
+                               <!-- <label for="" class="form-label">User Name</label> -->
+                               <input type="text" name="username" id="username" class="form-control" placeholder="Enter User Name">
+                        </div><br>
+                        <div class="mb-4"><center>
+                            <!-- <label for="" class="form-label">Password</label> -->
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Paasword">
+                     </div><br>
+                            <center><button type="submit" class="btn btn-primary">Login</button></center>
+                        </form>
+                        <p class="my-2"><center>don't have account ? <a href="{% url 'register' %}">Sign Up Now</center></a></p>
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+    </div>
+</body>
+
+</html>
